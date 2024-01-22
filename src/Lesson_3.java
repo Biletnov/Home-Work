@@ -36,8 +36,9 @@ public class Lesson_3 {
         System.out.println("Введите число:");
         Scanner scanner = new Scanner(System.in);
         int a = scanner.nextInt();
-        if (a < 0) System.out.println("Число отрицательное");
-        else System.out.println("Число положительное");
+        if (a < 0) {
+            System.out.println("Число отрицательное");
+        } else System.out.println("Число положительное");
     }
     
     // 3. Написать метод, которому в качестве параметра передается целое число. Метод должен вернуть true,
@@ -60,8 +61,9 @@ public class Lesson_3 {
         String str = scanner.nextLine();
         System.out.println("Введите число:");
         int a = scanner.nextInt();
-        for (int x = 0; x < a; x++)
+        for (int x = 0; x < a; x++) {
             System.out.println(str);
+        }
     }
     
     // 5. Написать метод, который определяет, является ли год високосным,
@@ -82,8 +84,11 @@ public class Lesson_3 {
     public static void replace() {
         int[] arr = new int[]{0, 0, 1, 0, 1, 0, 0, 1, 1};
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i] == 1) arr[i] = 0;
-            else arr[i] = 1;
+            if (arr[i] != 1) {
+                arr[i] = 1;
+            } else {
+                arr[i] = 0;
+            }
         }
         System.out.print(Arrays.toString(arr));
         System.out.println();
@@ -94,7 +99,9 @@ public class Lesson_3 {
     
     public static void fillArr() {
         int[] arr = new int[100];
-        for (int i = 0; i < arr.length; i++) arr[i] = i + 1;
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = i + 1;
+        }
         System.out.print(Arrays.toString(arr));
         System.out.println();
     }
@@ -117,11 +124,14 @@ public class Lesson_3 {
     // индексы таких элементов равны, то есть [0][0], [1][1], [2][2], ..., [n][n];
     
     public static void xMatrix() {
-        int matrix[][] = new int[15][15];
+        int[][] matrix = new int[15][15];
         for (int i = 0; i < 15; i++) {
             for (int j = 0; j < 15; j++) {
-                if (i == j || i + j == 14) matrix[i][j] = 1;
-                else matrix[i][j] = 0;
+                if (i == j || i + j == 14) {
+                    matrix[i][j] = 1;
+                } else {
+                    matrix[i][j] = 0;
+                }
                 System.out.print(matrix[i][j] + " ");
             }
             System.out.println();
@@ -135,10 +145,12 @@ public class Lesson_3 {
         System.out.println("Введите длину массива:");
         Scanner scanner = new Scanner(System.in);
         int len = scanner.nextInt();
-        int arr[] = new int[len];
+        int[] arr = new int[len];
         System.out.println("Введите целочисленное значение массива:");
         int initialValue = scanner.nextInt();
-        for (int i = 0; i < arr.length; i++) arr[i] = initialValue;
+        for (int i = 0; i < arr.length; i++) {
+            arr[i] = initialValue;
+        }
         System.out.print(Arrays.toString(arr));
         return arr;
     }
