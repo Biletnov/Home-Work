@@ -63,7 +63,9 @@ public class Lesson_3 {
         String str = scanner.nextLine();
         System.out.println("Введите число:");
         int a = scanner.nextInt();
-        for (int x = 0; x < a; x++) System.out.println(str);
+        for (int x = 0; x < a; x++) {
+            System.out.println(str);
+        }
     }
     
     // 5. Написать метод, который определяет, является ли год високосным,
