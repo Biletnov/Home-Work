@@ -38,7 +38,9 @@ public class Lesson_3 {
         int a = scanner.nextInt();
         if (a < 0) {
             System.out.println("Число отрицательное");
-        } else System.out.println("Число положительное");
+        } else {
+            System.out.println("Число положительное");
+        }
     }
     
     // 3. Написать метод, которому в качестве параметра передается целое число. Метод должен вернуть true,
@@ -78,7 +80,7 @@ public class Lesson_3 {
         return bool;
     }
     
-    // 6. Задать целочисленный массив, состоящий из элементов 0 и 1. Например: [ 1, 1, 0, 0, 1, 0, 1, 1, 0, 0 ].
+    // 6. Задать целочисленный массив, состоящий из элементов 0 и 1. Например: [1, 1, 0, 0, 1, 0, 1, 1, 0, 0].
     // С помощью цикла и условия заменить 0 на 1, 1 на 0.
     
     public static void replace() {
@@ -106,13 +108,15 @@ public class Lesson_3 {
         System.out.println();
     }
     
-    // 8. Задать массив [ 1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1 ] пройти по нему циклом,
+    // 8. Задать массив [1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1] пройти по нему циклом,
     // и числа меньшие 6 умножить на 2;
     
     public static void multiplyArr() {
         int[] arr = new int[]{1, 5, 3, 2, 11, 4, 5, 2, 4, 8, 9, 1};
         for (int i = 0; i < arr.length; i++) {
-            if (arr[i] < 6) arr[i] *= 2;
+            if (arr[i] < 6) {
+                arr[i] *= 2;
+            }
         }
         System.out.print(Arrays.toString(arr));
         System.out.println();
