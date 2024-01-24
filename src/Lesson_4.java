@@ -37,9 +37,10 @@ public class Lesson_4 {
                 "80001114321", 500000, 42);
         persArray[4].info();
         //3.
-        Park centralPark = new Park();
-        centralPark.info(10);
-        Park.Attraction attraction = new Park.Attraction();
-        attraction.info("Cars", "10 am - 10 pm", "5$");
+        Park.Attraction[] attractionsArray = new Park.Attraction[3];
+        attractionsArray[0] = new Park.Attraction("Cars", "10:00 - 22:30", "500");
+        attractionsArray[1] = new Park.Attraction("Trampoline", "10:00 - 21:00", "700");
+        attractionsArray[2] = new Park.Attraction("Tashnilovka carousel", "10:00 - 22:30", "100");
+        attractionsArray[2].info();
     }
 }
