@@ -1,4 +1,11 @@
 public class Park {
+    int amountAttr;
+    
+    public void info(int amountAttr) {
+        this.amountAttr = amountAttr;
+        System.out.println(amountAttr);
+    }
+    
     public static class Attraction {
         String name;
         String timeOfWork;

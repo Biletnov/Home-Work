@@ -37,6 +37,8 @@ public class Lesson_4 {
                 "80001114321", 500000, 42);
         persArray[4].info();
         //3.
+        Park centralPark = new Park();
+        centralPark.info(10);
         Park.Attraction attraction = new Park.Attraction();
         attraction.info("Cars", "10 am - 10 pm", "5$");
     }
