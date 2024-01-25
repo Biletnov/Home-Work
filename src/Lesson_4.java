@@ -37,10 +37,16 @@ public class Lesson_4 {
 //                "80001114321", 500000, 42);
 //        persArray[4].info();
         //3.
-        Park.Attraction[] attractionsArray = new Park.Attraction[3];
-        attractionsArray[0] = new Park.Attraction("Cars", "10:00 - 22:30", "500");
-        attractionsArray[1] = new Park.Attraction("Trampoline", "10:00 - 21:00", "700");
-        attractionsArray[2] = new Park.Attraction("Tashnilovka carousel", "10:00 - 22:30", "100");
-        attractionsArray[2].info();
+        Park park = new Park();
+        Park.Attraction attraction1 = new Park.Attraction("Electra Cars", "10:00 - 23:00", 100);
+        Park.Attraction attraction2 = new Park.Attraction("Trampoline", "10:00 - 21:00", 200);
+        Park.Attraction attraction3 = new Park.Attraction("Carousel", "10:00 - 23:00", 250);
+        System.out.println(attraction1.getName());
+        System.out.println(attraction2.getTimeOfWork());
+        System.out.println(attraction3.getCost());
+        System.out.println(attraction2.getName());
+        attraction2.setName("Wow Jump");
+        System.out.println(attraction2.getName());
+        attraction1.info();
     }
 }

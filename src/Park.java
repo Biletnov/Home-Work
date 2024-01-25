@@ -1,30 +1,18 @@
 public class Park {
-    private int countAttraction;
-    
-    public Park(int countAttraction) {
-        this.countAttraction = countAttraction;
-    }
-    
-    public int getCountAttraction() {
-        return countAttraction;
-    }
-    
-    public void setCountAttraction(int countAttraction) {
-        this.countAttraction = countAttraction;
-    }
-    
-    public void addAttr() {
-    }
     
     public static class Attraction {
         private String name;
         private String timeOfWork;
-        private String price;
+        private double cost;
         
-        public Attraction(String name, String timeOfWork, String price) {
+        public Attraction(String name, String timeOfWork, double cost) {
             this.name = name;
             this.timeOfWork = timeOfWork;
-            this.price = price;
+            this.cost = cost;
+        }
+        
+        public void info() {
+            System.out.println(name + "\n" + timeOfWork + "\n" + cost);
         }
         
         public String getName() {
@@ -43,16 +31,12 @@ public class Park {
             this.timeOfWork = timeOfWork;
         }
         
-        public String getPrice() {
-            return price;
+        public double getCost() {
+            return cost;
         }
         
-        public void setPrice(String price) {
-            this.price = price;
-        }
-        
-        public void info() {
-            System.out.println(name + "\n" + timeOfWork + "\n" + price);
+        public void setCost(double cost) {
+            this.cost = cost;
         }
     }
 }
