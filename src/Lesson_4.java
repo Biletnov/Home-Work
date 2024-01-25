@@ -20,22 +20,22 @@ persArray[4] = new Person(...);
 public class Lesson_4 {
     public static void main(String[] args) {
         //1.
-        Employee person = new Employee("Ivanov Ivan Ivanovich", "driver", "shumaxer@mail.ru",
-                "87778766766", 30000, 40);
-        person.info();
+//        Employee person = new Employee("Ivanov Ivan Ivanovich", "driver", "shumaxer@mail.ru",
+//                "87778766766", 30000, 40);
+//        person.info();
         //2.
-        Employee[] persArray = new Employee[5];
-        persArray[0] = new Employee("Ivanov Ivan", "Engineer", "iavan@mail.ru",
-                "89277275555", 40000, 35);
-        persArray[1] = new Employee("Petrov Petr", "Driver", "petro@mail.ru",
-                "88908086572", 30000, 45);
-        persArray[2] = new Employee("Sidorova Maria", "Cook", "sidr@mail.ru",
-                "89677244565", 30000, 40);
-        persArray[3] = new Employee("Sidorov Marat", "Security", "sidrMart@mail.ru",
-                "89677244566", 20000, 45);
-        persArray[4] = new Employee("Gagarin Uriy", "CEO", "firstNah@mail.ru",
-                "80001114321", 500000, 42);
-        persArray[4].info();
+//        Employee[] persArray = new Employee[5];
+//        persArray[0] = new Employee("Ivanov Ivan", "Engineer", "iavan@mail.ru",
+//                "89277275555", 40000, 35);
+//        persArray[1] = new Employee("Petrov Petr", "Driver", "petro@mail.ru",
+//                "88908086572", 30000, 45);
+//        persArray[2] = new Employee("Sidorova Maria", "Cook", "sidr@mail.ru",
+//                "89677244565", 30000, 40);
+//        persArray[3] = new Employee("Sidorov Marat", "Security", "sidrMart@mail.ru",
+//                "89677244566", 20000, 45);
+//        persArray[4] = new Employee("Gagarin Uriy", "CEO", "firstNah@mail.ru",
+//                "80001114321", 500000, 42);
+//        persArray[4].info();
         //3.
         Park.Attraction[] attractionsArray = new Park.Attraction[3];
         attractionsArray[0] = new Park.Attraction("Cars", "10:00 - 22:30", "500");
