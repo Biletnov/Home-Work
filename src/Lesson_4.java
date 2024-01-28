@@ -19,10 +19,12 @@ persArray[4] = new Person(...);
 */
 public class Lesson_4 {
     public static void main(String[] args) {
+        
         //1.
 //        Employee person = new Employee("Ivanov Ivan Ivanovich", "driver", "shumaxer@mail.ru",
 //                "87778766766", 30000, 40);
 //        person.info();
+        
         //2.
 //        Employee[] persArray = new Employee[5];
 //        persArray[0] = new Employee("Ivanov Ivan", "Engineer", "iavan@mail.ru",
@@ -36,17 +38,24 @@ public class Lesson_4 {
 //        persArray[4] = new Employee("Gagarin Uriy", "CEO", "firstNah@mail.ru",
 //                "80001114321", 500000, 42);
 //        persArray[4].info();
+        
         //3.
-        Park park = new Park();
-        Park.Attraction attraction1 = new Park.Attraction("Electra Cars", "10:00 - 23:00", 100);
-        Park.Attraction attraction2 = new Park.Attraction("Trampoline", "10:00 - 21:00", 200);
-        Park.Attraction attraction3 = new Park.Attraction("Carousel", "10:00 - 23:00", 250);
-        System.out.println(attraction1.getName());
-        System.out.println(attraction2.getTimeOfWork());
-        System.out.println(attraction3.getCost());
-        System.out.println(attraction2.getName());
-        attraction2.setName("Wow Jump");
-        System.out.println(attraction2.getName());
-        attraction1.info();
+        Park park = new Park(2);
+        Park.Attraction attraction1 = park.new Attraction("Машинки", "10:00 - 23:00", 100);
+        Park.addAttraction(attraction1);
+        Park.Attraction attraction2 = park.new Attraction("Карусель Орбита", "10:00 - 23:00", 250);
+        Park.addAttraction(attraction2);
+        Park.infoAttr();
+
+//        Park.Attraction attraction1 = new Park.Attraction("Машинки", "10:00 - 23:00", 100);
+//        Park.Attraction attraction2 = new Park.Attraction("Весёлый батут", "10:00 - 21:00", 200);
+//        Park.Attraction attraction3 = new Park.Attraction("Карусель Орбита", "10:00 - 23:00", 250);
+//        System.out.println(attraction1.getName());
+//        System.out.println(attraction2.getTimeOfWork());
+//        System.out.println(attraction3.getCost());
+//        System.out.println(attraction2.getName());
+//        attraction2.setName("Батут Рагозина");
+//        System.out.println(attraction2.getName());
+//        attraction1.info();
     }
 }

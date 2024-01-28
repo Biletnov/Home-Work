@@ -1,6 +1,28 @@
 public class Park {
+    private static Attraction[] attractions;
+    private static int attractionsCount;
     
-    public static class Attraction {
+    public Park(int count) {
+        attractions = new Attraction[count];
+        attractionsCount = 0;
+    }
+    
+    public static void addAttraction(Attraction attraction) {
+        if (attractionsCount < attractions.length) {
+            attractions[attractionsCount] = attraction;
+            attractionsCount++;
+        }
+    }
+    
+    public static void infoAttr() {
+        for (Attraction attraction : attractions) {
+            if (attraction != null) {
+                System.out.println(attraction.getName() + "\n" + attraction.timeOfWork + "\n" + attraction.cost);
+            }
+        }
+    }
+    
+    public class Attraction {
         private String name;
         private String timeOfWork;
         private double cost;
