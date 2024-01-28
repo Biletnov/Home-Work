@@ -41,21 +41,17 @@ public class Lesson_4 {
         
         //3.
         Park park = new Park(2);
-        Park.Attraction attraction1 = park.new Attraction("Машинки", "10:00 - 23:00", 100);
+        Park.Attraction attraction1 = new Park.Attraction("Машинки", "10:00 - 23:00", 100);
         Park.addAttraction(attraction1);
-        Park.Attraction attraction2 = park.new Attraction("Карусель Орбита", "10:00 - 23:00", 250);
+        Park.Attraction attraction2 = new Park.Attraction("Карусель Орбита", "10:00 - 23:00", 250);
         Park.addAttraction(attraction2);
         Park.infoAttr();
-
-//        Park.Attraction attraction1 = new Park.Attraction("Машинки", "10:00 - 23:00", 100);
-//        Park.Attraction attraction2 = new Park.Attraction("Весёлый батут", "10:00 - 21:00", 200);
-//        Park.Attraction attraction3 = new Park.Attraction("Карусель Орбита", "10:00 - 23:00", 250);
-//        System.out.println(attraction1.getName());
-//        System.out.println(attraction2.getTimeOfWork());
-//        System.out.println(attraction3.getCost());
-//        System.out.println(attraction2.getName());
-//        attraction2.setName("Батут Рагозина");
-//        System.out.println(attraction2.getName());
-//        attraction1.info();
+        System.out.println(attraction1.getName());
+        System.out.println(attraction2.getTimeOfWork());
+        System.out.println(attraction2.getCost());
+        System.out.println(attraction2.getName());
+        attraction2.setName("Батут Рагозина");
+        System.out.println(attraction2.getName());
+        attraction1.info();
     }
 }

@@ -22,7 +22,7 @@ public class Park {
         }
     }
     
-    public class Attraction {
+    public static class Attraction {
         private String name;
         private String timeOfWork;
         private double cost;
