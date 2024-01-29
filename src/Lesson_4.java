@@ -44,13 +44,13 @@ public class Lesson_4 {
         //3.
         
         Park park = new Park(3);
-        Park.Attraction attraction1 = new Park(1).new Attraction("Машинки",
+        Park.Attraction attraction1 = park.new Attraction("Машинки",
                 "10:00 - 23:00", 100);
         park.addAttraction(attraction1);
-        Park.Attraction attraction2 = new Park(2).new Attraction("Карусель Орбита",
+        Park.Attraction attraction2 = park.new Attraction("Карусель Орбита",
                 "10:00 - 23:00", 250);
         park.addAttraction(attraction2);
-        Park.Attraction attraction3 = new Park(3).new Attraction("Батуты",
+        Park.Attraction attraction3 = park.new Attraction("Батуты",
                 "10:00 - 22:00", 100);
         park.addAttraction(attraction3);
         park.infoAttr();
