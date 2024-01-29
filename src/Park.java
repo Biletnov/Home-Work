@@ -1,28 +1,45 @@
 public class Park {
-    private static Attraction[] attractions;
-    private static int attractionsCount;
+    private int count;
+    private Attraction[] attractions;
+    
+    private int attractionsCount;
     
     public Park(int count) {
         attractions = new Attraction[count];
+        this.count = count;
         attractionsCount = 0;
     }
     
-    public static void addAttraction(Attraction attraction) {
+    public void addAttraction(Attraction attraction) {
         if (attractionsCount < attractions.length) {
             attractions[attractionsCount] = attraction;
             attractionsCount++;
+        } else {
+            System.out.println("Массив аттракционов переполнен");
         }
     }
     
-    public static void infoAttr() {
+    public void infoAttr() {
         for (Attraction attraction : attractions) {
             if (attraction != null) {
-                System.out.println(attraction.getName() + "\n" + attraction.timeOfWork + "\n" + attraction.cost);
+                System.out.println(attraction.getName() + "\n" + attraction.getTimeOfWork() + "\n" + attraction.getCost());
             }
         }
     }
     
-    public static class Attraction {
+    public int getCount() {
+        return count;
+    }
+    
+    public void setCount(int count) {
+        this.count = count;
+    }
+    
+    public void countInfo() {
+        System.out.println(attractionsCount);
+    }
+    
+    public class Attraction {
         private String name;
         private String timeOfWork;
         private double cost;
