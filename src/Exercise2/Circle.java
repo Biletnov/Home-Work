@@ -1,39 +1,26 @@
 package Exercise2;
 
-public class Circle implements Shape, Fillable, Borderable {
+public class Circle extends Figure {
     private double radius;
-    private String fillColor;
-    private String borderColor;
     
-    public Circle(double radius) {
+    protected Circle(String name, String figureColor, String borderColor, double radius) {
+        super(name, figureColor, borderColor);
         this.radius = radius;
     }
     
     @Override
-    public double calculatePerimeter() {
+    public double getPerimeter() {
         return 2 * Math.PI * radius;
     }
     
     @Override
-    public double calculateArea() {
+    public double getArea() {
         return Math.PI * radius * radius;
     }
     
-    @Override
-    public void setFillColor(String color) {
-        this.fillColor = color;
-    }
-    
-    @Override
-    public void setBorderColor(String color) {
-        this.borderColor = color;
-    }
-    
     public void printCharacteristics() {
-        System.out.println("Circle:");
-        System.out.println("Perimeter: " + calculatePerimeter());
-        System.out.println("Area: " + calculateArea());
-        System.out.println("Fill color: " + fillColor);
-        System.out.println("Border color: " + borderColor);
+        System.out.println(toString());
+        System.out.println("Perimeter: " + getPerimeter());
+        System.out.println("Area: " + getArea());
     }
 }
