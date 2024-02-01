@@ -1,17 +1,18 @@
 package Exercise2;
 
 public abstract class Figure implements FigureCalculation {
-    private final String NAME;
-    private final String FIGURE_COLOR;
-    private final String BORDER_COLOR;
+    private String name;
+    private String figureColor;
+    private String borderColor;
     
     protected Figure(String name, String figureColor, String borderColor) {
-        NAME = name;
-        FIGURE_COLOR = figureColor;
-        BORDER_COLOR = borderColor;
+        this.name = name;
+        this.figureColor = figureColor;
+        this.borderColor = borderColor;
     }
     
     public String toString() {
-        return (NAME + "\n" + "цвет фигуры: " + FIGURE_COLOR + "\n" + "цвет границы: " + BORDER_COLOR);
+        return (name + "\n" + "цвет фигуры: " + figureColor + "\n" + "цвет границы: " + borderColor +
+                "\nPerimeter: " + getPerimeter() + "\nArea: " + getPerimeter());
     }
 }

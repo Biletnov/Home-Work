@@ -17,10 +17,4 @@ public class Circle extends Figure {
     public double getArea() {
         return Math.PI * radius * radius;
     }
-    
-    public void printCharacteristics() {
-        System.out.println(toString());
-        System.out.println("Perimeter: " + getPerimeter());
-        System.out.println("Area: " + getArea());
-    }
 }

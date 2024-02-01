@@ -19,10 +19,4 @@ public class Rectangle extends Figure {
     public double getArea() {
         return width * height;
     }
-    
-    public void printCharacteristics() {
-        System.out.println(toString());
-        System.out.println("Perimeter: " + getPerimeter());
-        System.out.println("Area: " + getArea());
-    }
 }

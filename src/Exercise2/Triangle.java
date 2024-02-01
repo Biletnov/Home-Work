@@ -24,10 +24,4 @@ class Triangle extends Figure {
         return Math.sqrt(halfPerimeter * (halfPerimeter - side1) *
                 (halfPerimeter - side2) * (halfPerimeter - side3));
     }
-    
-    public void printCharacteristics() {
-        System.out.println(toString());
-        System.out.println("Perimeter: " + getPerimeter());
-        System.out.println("Area: " + getArea());
-    }
 }
