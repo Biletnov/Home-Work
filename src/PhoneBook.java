@@ -1,24 +1,29 @@
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class PhoneBook {
-    private HashMap<String, ArrayList<String>> phoneNumbers;
+    private Map<String, List<String>> phoneNumbers;
     
     public PhoneBook() {
         phoneNumbers = new HashMap<>();
     }
     
     public void add(String lastName, String phoneNumber) {
-        if (phoneNumbers.containsKey(lastName)) {
-            phoneNumbers.get(lastName).add(phoneNumber);
-        } else {
-            ArrayList<String> numbers = new ArrayList<>();
-            numbers.add(phoneNumber);
-            phoneNumbers.put(lastName, numbers);
+        for (Map.Entry<String, List<String>> entry : phoneNumbers.entrySet()) {
+            if (entry.getValue().contains(phoneNumber)) {
+                System.out.println("Номер телефона уже принадлежит " + entry.getKey());
+                return;
+            }
         }
+        if (!phoneNumbers.containsKey(lastName)) {
+            phoneNumbers.put(lastName, new ArrayList<>());
+        }
+        phoneNumbers.get(lastName).add(phoneNumber);
     }
     
-    public ArrayList<String> get(String lastName) {
+    public List<String> get(String lastName) {
         return phoneNumbers.get(lastName);
     }
 }
