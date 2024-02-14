@@ -30,14 +30,16 @@ public class Main {
         
         //PhoneBook
         PhoneBook phoneBook = new PhoneBook();
+        //Добавление номеров
         phoneBook.add("Иванов", "9898212");
         phoneBook.add("Петров", "4840293");
         phoneBook.add("Сидоров", "21375869");
-        phoneBook.add("Андреев", "4840293");
+        phoneBook.add("Андреев", "4840293");  //Добавляет уже записанный номер
         phoneBook.add("Иванов", "99099090");
-        System.out.println("Иванов " + phoneBook.get("Иванов"));
+        
+        System.out.println("Иванов " + phoneBook.get("Иванов")); //Выводит все номера фамилии
         System.out.println("Петров " + phoneBook.get("Петров"));
-        System.out.println("Андреев " + phoneBook.get("Андреев"));
+        System.out.println("Андреев " + phoneBook.get("Андреев")); // Проверка добавился ли повторяющийся номер
         phoneBook.add("Андреев", "8383838");
         System.out.println("Андреев " + phoneBook.get("Андреев"));
     }
