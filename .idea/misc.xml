@@ -5,6 +5,7 @@
     <option name="originalFiles">
       <list>
         <option value="$PROJECT_DIR$/Lesson_11_maven/pom.xml" />
+        <option value="$PROJECT_DIR$/Lesson_12_junit_5/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
