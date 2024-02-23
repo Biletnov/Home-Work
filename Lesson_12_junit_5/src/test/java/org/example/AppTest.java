@@ -1,38 +1,27 @@
 package org.example;
 
-import junit.framework.Test;
-import junit.framework.TestCase;
-import junit.framework.TestSuite;
+import org.junit.jupiter.api.Test;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest 
-    extends TestCase
-{
-    /**
-     * Create the test case
-     *
-     * @param testName name of the test case
-     */
-    public AppTest( String testName )
-    {
-        super( testName );
+import java.math.BigInteger;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
+public class AppTest {
+    
+    @Test
+    void testFactorialOfZero() {
+        assertEquals(new BigInteger("1"), App.calculateFactorial(0));
     }
-
-    /**
-     * @return the suite of tests being tested
-     */
-    public static Test suite()
-    {
-        return new TestSuite( AppTest.class );
+    
+    @Test
+    void testFactorialOfPositiveNumber() {
+        assertEquals(new BigInteger("720"), App.calculateFactorial(6));
     }
-
-    /**
-     * Rigourous Test :-)
-     */
-    public void testApp()
-    {
-        assertTrue( true );
+    
+    @Test
+    void testFactorialOfNegativeNumber() {
+        IllegalArgumentException exception = assertThrows(IllegalArgumentException.class, () -> App.calculateFactorial(-5));
+        assertEquals("Число не может быть отрицательным", exception.getMessage());
     }
 }
