@@ -30,7 +30,7 @@ public class MtsByTests {
     public void setUp() {
         driver = new ChromeDriver();
         driver.get("https://mts.by");
-        driver.manage().timeouts().implicitlyWait(13, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
         WebElement cookie = driver.findElement(By.id("cookie-agree"));// Принимает cookie
         cookie.click();
     }
@@ -61,8 +61,12 @@ public class MtsByTests {
         WebElement phoneNumberInput = driver.findElement(By.id("connection-phone"));
         phoneNumberInput.click();
         phoneNumberInput.sendKeys(testPhoneNumber);
+        WebElement inputSum = driver.findElement(By.xpath("//*[@id='connection-sum']"));
+        inputSum.sendKeys("100");
         WebElement button = driver.findElement(By.xpath("//*[@id='pay-connection']/button"));
         button.click();
+        WebElement popUp = driver.switchTo().activeElement();
+        assertTrue(popUp.isDisplayed(), "Оплата: Услуги связи Номер:375297777777");
     }
     
     @AfterEach
