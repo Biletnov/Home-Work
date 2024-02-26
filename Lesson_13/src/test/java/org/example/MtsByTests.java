@@ -28,10 +28,9 @@ public class MtsByTests {
     
     @BeforeEach
     public void setUp() {
-        System.setProperty("webdriver.chrome.driver", "C:\\Users\\bilet\\IdeaProjects\\Home_work\\Lesson_13\\src\\main\\resources\\chromedriver.exe");
         driver = new ChromeDriver();
-        driver.manage().timeouts().implicitlyWait(13, TimeUnit.SECONDS);
         driver.get("https://mts.by");
+        driver.manage().timeouts().implicitlyWait(13, TimeUnit.SECONDS);
         WebElement cookie = driver.findElement(By.id("cookie-agree"));// Принимает cookie
         cookie.click();
     }
