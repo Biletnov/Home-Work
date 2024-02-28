@@ -8,6 +8,15 @@ package org.example;
 // Заполнить поля и проверить работу кнопки «Продолжить»
 // (проверяем только вариант «Услуги связи», номер для теста 297777777)
 
+//--------------------------------- Lesson_14 -----------------------------------
+
+//Продолжим работу над блоком «Онлайн пополнение без комиссии» сайта mts.by.
+//Проверить надписи в незаполненных полях каждого варианта оплаты услуг:
+// услуги связи, домашний интернет, рассрочка, задолженность;
+// Для варианта «Услуги связи» заполнить поля в соответствии с пререквизитами из предыдущей темы,
+// нажать кнопку «Продолжить» и в появившемся окне проверить корректность отображения суммы (в том числе на кнопке),
+// номера телефона, а также надписей в незаполненных полях для ввода реквизитов карты, наличие иконок платёжных систем.
+
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -16,21 +25,21 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-import java.util.concurrent.TimeUnit;
+import java.time.Duration;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-public class MtsByTests {
+public class MtsTests {
     
-    private WebDriver driver;
+    private static WebDriver driver;
     private String testPhoneNumber = "297777777";
     
     @BeforeEach
     public void setUp() {
         driver = new ChromeDriver();
         driver.get("https://mts.by");
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(15));
         WebElement cookie = driver.findElement(By.id("cookie-agree"));// Принимает cookie
         cookie.click();
     }
@@ -38,13 +47,13 @@ public class MtsByTests {
     @Test//Проверка названия блока
     public void BlockCheckName() {
         WebElement blockTitle = driver.findElement(By.xpath("//h2[text()='Онлайн пополнение ']"));
-        assertTrue(blockTitle.isDisplayed(), "Онлайн пополнение без комиссии");
+        assertTrue(blockTitle.getText().equals("Онлайн пополнение\nбез комиссии"));
     }
     
     @Test//Проверка наличия логотипов платёжных систем
     public void PayPartnersLogoCheck() {
         WebElement logoBlock = driver.findElement(By.className("pay__partners"));
-        assertTrue(logoBlock.findElements(By.tagName("img")).size() > 0, "Логотипы не найдены");
+        assertTrue(logoBlock.findElements(By.tagName("img")).size() > 0);
     }
     
     @Test//Проверка работы ссылки «Подробнее о сервисе»
@@ -65,13 +74,16 @@ public class MtsByTests {
         inputSum.sendKeys("100");
         WebElement button = driver.findElement(By.xpath("//*[@id='pay-connection']/button"));
         button.click();
-        WebElement popUp = driver.switchTo().activeElement();
-        assertTrue(popUp.isDisplayed(), "Оплата: Услуги связи Номер:375297777777");
+        WebElement bepaidIframe = driver.findElement(By.cssSelector(".bepaid-iframe"));
+        driver.switchTo().frame(bepaidIframe);
+        WebElement num = driver.findElement(By.xpath("//p[contains(text(), 'Номер:375297777777')]"));
+        assertTrue(num.isDisplayed());
     }
     
     @AfterEach
     public void kill() {
         if (driver != null) {
+            driver.manage().deleteAllCookies();
             driver.quit();
         }
     }
