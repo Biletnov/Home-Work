@@ -1,11 +1,6 @@
-/* Написать автотест для калькулятора, который совершает арифметические действия
-(сложение, вычитание, умножение и деление) и проверяет, что результат, отображаемый на экране соответствует
- ожидаемому (для теста взять приложение «Калькулятор» от Google).
+/* Необходимо взять тест из практического задания в теме 17 и добавить Allure-репорт.
 
-Необходимо помимо решения приложить видеоподтверждение того, что тест проходит
-(удачное прохождение в среде разработки и видео с экрана телефона или эмулятора
-(для эмулятора можно сделать одно видео, на котором виден сам эмулятор и прохождение теста в среде разработки).
-Способ передачи видео следует обговорить с проверяющим. */
+Решение необходимо дополнить видео с прогоном теста и генерацией отчета в Allure. */
 
 import io.appium.java_client.android.AndroidDriver;
 import io.appium.java_client.remote.MobileCapabilityType;
@@ -27,7 +22,7 @@ public class Tests {
     public void setup() throws MalformedURLException {
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability(MobileCapabilityType.PLATFORM_NAME, "Android");
-        capabilities.setCapability(MobileCapabilityType.UDID, "emulator-5556");
+        capabilities.setCapability(MobileCapabilityType.UDID, "emulator-5554");
         capabilities.setCapability(MobileCapabilityType.DEVICE_NAME, "Pixel 3");
         capabilities.setCapability(MobileCapabilityType.VERSION, "10");
         capabilities.setCapability("appPackage", "com.google.android.calculator");
@@ -36,6 +31,7 @@ public class Tests {
     }
     
     @Test
+   
     public void testCalculatorAddition() {
         WebElement button2 = driver.findElementById("com.google.android.calculator:id/digit_2");
         button2.click();
@@ -55,6 +51,7 @@ public class Tests {
     }
     
     @Test
+    
     public void testCalculatorSubtraction() {
         WebElement button6 = driver.findElementById("com.google.android.calculator:id/digit_6");
         button6.click();
@@ -74,6 +71,7 @@ public class Tests {
     }
     
     @Test
+    
     public void testCalculatorMultiplication() {
         WebElement button4 = driver.findElementById("com.google.android.calculator:id/digit_4");
         button4.click();
@@ -93,6 +91,7 @@ public class Tests {
     }
     
     @Test
+    
     public void testCalculatorDivision() {
         WebElement button1 = driver.findElementById("com.google.android.calculator:id/digit_1");
         button1.click();
@@ -115,6 +114,7 @@ public class Tests {
     }
     
     @Test
+    
     public void testCalculatorDivisionByZero() {
         WebElement button3 = driver.findElementById("com.google.android.calculator:id/digit_3");
         button3.click();
